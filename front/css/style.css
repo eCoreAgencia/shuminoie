@@ -2703,7 +2703,7 @@ header.ha-hide {
 	margin: 20px 0;
 }
 
-body.cursos .full-banner {
+body.cursos .full-banner img {
 	width: 100%;
 	height: auto;
 }
@@ -9422,7 +9422,7 @@ header section.menu-header ul li:nth-child(4).has-sub .submenu {
 
 header section.menu-header ul li:nth-child(5).has-sub .submenu {
 	left: 680px;
-	width: 280px;
+	width: 300px;
 }
 
 header section.menu-header ul li.has-sub .submenu {
