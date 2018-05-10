@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Sidebar Search
+   ========================================================================== */
+
+.navigation-tabs{
+	font-size: 22px;
+	font-size: 1.375rem;
+	max-width: 300px;
+	list-style: none;
+	padding: 10px;
+	margin-top: 50px;
+	width: 280px;
+	border: 1px solid #E7E7E7;
+
+	h3,
+	h4,
+	h5,
+	ul.Marca,
+	.menu-navegue,
+	ul.productClusterSearchableIds {
+		display: none;
+	}
+
+	h5.Cursos {
+		display: block;
+	}
+
+	ul {
+		margin-bottom: 20px;
+
+		li {
+			list-style: none;
+			padding: 8px !important;
+
+			a {
+				@extend .transition;
+				font-size:22px;
+				font-size:1.375rem;
+				text-decoration:none;
+				color:#636363;
+
+				&:hover {
+					@extend .transition;
+					color: #000;
+				}
+			}
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.banners-top{
+	margin-bottom:40px;
+}
+
+.banners-top-flex{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+
+.banners-top-flex section {
+	margin: 20px 0;
+}
+
+body.cursos .full-banner {
+	width: 100%;
+	height: auto;
+}
+
+.main-flex{
+	display: flex;
+	justify-content: space-between;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.content-two{
+    max-width: 936px;
+}
+
+.prateleira ul{
+  width:auto !important;
+}
+
+body.cursos-online h3.tlt-shelf+span{
+  color: #B942B1;
+}
+
+body.cursos-online .prateleira ul li .box-item:hover {
+    border-color: #B942B1;
+}
+
+body.cursos-online .titleCurso{
+  color:#A73AA2;
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+body.cursos-online .prateleira ul li .wrapper-buy-button-asynchronous .add a:hover {
+    background: #A73AA2;
+}
+
+body.cursos-online .prateleira ul li .wrapper-buy-button-asynchronous .add a {
+    font-size: 18px;
+    width: 100%;
+    color: #fff;
+    display: block;
+    padding: 10px 0;
+    font-weight: 700;
+    background: #B942B1;
+}
+
+body.cursos-online .mopen{
+  border-left:6px solid #B942B1;
+}
+
+body.cursos-online .prateleira ul li span.best-price {
+    color: #B942B1;
+}
+
+body.cursos-online .prateleira ul li span.preco-boleto {
+    color: #B942B1;
+}
+
+body.cursos-presenciais .mopen{
+  border-left:6px solid #4A8CC1;
+}
+
+body.cursos-presenciais .titleCurso{
+  color:#4A8CC1;
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+body.cursos-presenciais h3.tlt-shelf+span{
+  color: #437EB0;
+}
+
+body.cursos-presenciais .prateleira ul li .box-item:hover {
+    border-color: #4A8CC1;
+}
+
+body.cursos-presenciais .prateleira ul li .wrapper-buy-button-asynchronous .add a:hover {
+    background: #437EB0;
+}
+
+body.cursos-presenciais .prateleira ul li .wrapper-buy-button-asynchronous .add a {
+    font-size: 18px;
+    width: 100%;
+    color: #fff;
+    display: block;
+    padding: 10px 0;
+    font-weight: 700;
+    background: #4A8CC1;
+}
+
+body.cursos-presenciais .prateleira ul li span.best-price {
+    color: #4A8CC1;
+}
+
+body.cursos-presenciais .prateleira ul li span.preco-boleto {
+    color: #4A8CC1;
+}

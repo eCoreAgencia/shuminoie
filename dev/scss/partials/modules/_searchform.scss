@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Form Busca
+   ========================================================================== */
+
+#search-box {
+    margin-top: 20px;
+    padding-top: 5px;
+    text-align: left;
+    position: relative;
+	border-top: 1px solid #e0e0e0;
+
+	@include mq($screen-sm) {
+		border: none;
+		margin-top: 0;
+		padding-top: 0;
+	}
+
+	.bt-search {
+		right: 10px;
+		bottom: 3px;
+		cursor: pointer;
+		position: absolute;
+	}
+	
+	fieldset {
+		width: 100%;
+		margin-top: 10px;
+		vertical-align: top;
+		display: inline-block;
+
+		label,
+		legend,
+		select {
+			display: none;
+		}
+
+		input.fulltext-search-box {
+			@include font-size(1.4);
+			width: 100%;
+			height: 45px;
+			border: none;
+			outline: none;
+			color: #4f4f4e;
+			background: #fff;
+			font-style: italic;
+			padding: 10px 20px;
+			border-radius: 10px;
+			border-bottom: 1px solid #fff;
+		}
+
+		input.btn-buscar {
+			top: 25px;
+			right: 50px;
+			width: 18px;
+			font-size: 0;
+			height: 19px;
+			border: none;
+			cursor: pointer;
+			position: absolute;
+			background: url('/arquivos/search-icon.png') no-repeat scroll 0 0 transparent;
+		}
+	}
+}

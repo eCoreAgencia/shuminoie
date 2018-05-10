@@ -1,0 +1,798 @@
+
+/* ==========================================================================
+   Página de Produto
+   ========================================================================== */
+
+body.produto{
+    @media screen and (max-width: 1300px) {
+        .zoomPup,
+        .zoomWindow,
+        .zoomWrapper,
+        .zoomWrapperImage {
+            display: none !important;
+        }
+
+        .product-box {
+            border-right: none !important;
+        }
+
+        .zoomWrapperImage {
+            img {
+                display: none !important;
+            }
+        }
+    }
+    .preco-a-vista {
+        display: none !important;
+    }
+    main{
+        padding-top: 0;
+        .container{
+            @include mq($screen-sm){
+                padding: 0 25px;
+            }
+            @include mq($screen-md){
+                padding: 0;
+            }
+        }
+        #divCompreJunto{
+            text-align: center;
+            margin-bottom: 50px;
+            hr{display: none;}
+            #divTitulo{display: none;}
+            h4{
+                font-size: 24px;
+                font-weight: normal;
+                margin-bottom: 20px;
+            }
+            tbody{
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 50px;
+                justify-content: center;
+            }
+            tr{
+                display: flex;
+                padding: 15px 0;
+                flex-wrap: wrap;
+                align-items: center;
+                flex-direction: column;
+                @include mq($screen-sm){
+                    padding: 15px 10px;
+                    flex-direction: row;
+                }
+                @include mq($screen-md){
+                    align-content: center;
+                }
+                img{
+                    @include mq($screen-sm){
+                        width: 100%;
+                        height: auto;
+                    }
+                    @include mq($screen-md){
+                        width: auto;
+                        height: auto;
+                    }
+                }
+                td{
+                    &.itemA, &.itemB{
+                        @include mq($screen-sm){
+                            width: 45%;
+                            align-self: stretch;
+                        }
+                    }
+                    &.plus{
+                        @include mq($screen-sm){
+                            width: 10%;
+                            padding: 0;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            display: inline-flex;
+                            justify-content: center;
+                        }
+                        @include mq($screen-md){
+                            width: auto;
+                            padding: 0 20px;
+                        }
+                    }
+                    &.equal, &.buy{
+                        @include mq($screen-sm){
+                            width: 100%;
+                        }
+                        @include mq($screen-md){
+                            width: auto;
+                        }
+                    }
+                    &.equal{
+                        width: 100%;
+                        align-items: center;
+                        display: inline-flex;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                }
+            }
+            .itemA,
+            .itemB{
+                max-width: 300px;
+                line-height: 18px;
+                text-align: center;
+                a{
+                    color: #252525;
+                    display: block;
+                    font-size: 14px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                }
+                img{
+                    border: 1px solid #ccc;
+                }
+                h3{
+                    font-weight: 400;
+                    text-transform: uppercase;
+                }
+            }
+            .plus,
+            .equal{
+                color: #eb7733;
+                font-size: 60px;
+                padding: 0 20px;
+                font-weight: 800;
+            }
+            .buy{
+                font-size: 0;
+                color: #252525;
+                line-height: 20px;
+                font-weight: bold;
+                text-decoration: none;
+                text-transform: capitalize;
+                @include mq($screen-md){
+                    text-align: left;
+                }
+                a{
+                    color: #894794;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+                strong{display: none;}
+                span{
+                    @include font-size(1.6);
+                    display: block;
+                    padding: 2px 0;
+                    strong{
+                        @include font-size(2.2);
+                        color: #eb7733;
+                        padding-left: 5px;
+                        display: inline-block;
+                    }
+                    &.total{
+                        strong{
+                            @include font-size(2.8);
+                        }
+                    }
+                }
+                .more{
+                    display: none;
+                }
+                .comprar-junto{
+                    width: 100%;
+                    float: left;
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                    @include mq($screen-md){
+                        justify-content: flex-start;
+                    }
+                }
+                #lnkComprar{
+                    @extend .btn;
+                    @extend .transition;
+                    @include font-size(3.0);
+                    border: 0;
+                    margin: 0;
+                    float: left;
+                    width: 100%;
+                    max-width: 100%;
+                    border-radius: 0;
+                    font-weight: bold;
+                    padding: 10px 30px;
+                    background: #2ea42f;
+                    text-decoration: none;
+                    color: #fff !important;
+                    text-transform: uppercase;
+                    @include mq($screen-sm){
+                        width: auto;
+                    }
+                    &:hover {
+                        @extend .transition;
+                        background: #EB7733;
+                        color: #fff !important;
+                    }
+                }
+            }
+        }
+        .product-view{
+            padding: 0 0 50px;
+            overflow: hidden;
+            .product-box {
+                border-right: none;
+                position: relative;
+                .apresentacao {
+                    #show{
+                        text-align: center;
+                        @include mq($screen-sm){
+                            text-align: left;
+                        }
+                    }
+    				#include {
+                        @include mq($screen-sm) {
+    			    	    padding-left: 100px;
+                        }
+                        a {
+                            display: block;
+                        }
+                        #image{
+                            display: flex;
+                            overflow: hidden;
+                            max-width: 600px;
+                            max-height: 450px;
+                            align-items: center;
+                            box-sizing: border-box;
+                            justify-content: center;
+                            border: 1px solid #cdcdcd;
+                            @include mq($screen-sm){
+                                float: right;
+                            }
+                            .sku-rich-image-main {
+                                width: 100%;
+                                margin: 0 auto;
+                                max-width: 225px;
+                                display: block;
+                                vertical-align: middle;
+                                @include mq($screen-sm) {
+                                    width: auto;
+                                    max-width: 100%;
+                                }
+                            }
+                        }
+    			    }
+
+                    .zoomWrapperImage > img {
+                        width: 95%;
+                    }
+
+                    .zoomPad {
+                        overflow: hidden;
+                        position: relative;
+                    }
+
+                    .zoomWindow {
+                        width: 200%;
+                        height: 100%;
+                        left: 0 !important;
+                        background: none repeat scroll 0 0 #fff;
+                    }
+                    .prev-thumb, .next-thumb{
+                        @extend .transition;
+                        bottom: 3%;
+                        z-index: 0;
+                        opacity: 0;
+                        display: none;
+                        cursor: pointer;
+                        transition: .6s;
+                        padding: 7% 15px;
+                        user-select: none;
+                        position: absolute;
+                        background: #f1f1f1;
+                        border: 1px solid #cfcfcf;
+
+                        @include mq($screen-sm) {
+                            left: 33%;
+                            display: none;
+                            bottom: initial;
+                            padding: 50px 15px;
+                            position: absolute;
+                            transform: rotate(90deg);
+                        }
+                        @include mq($screen-md){
+                           display: block;
+                        }
+                        &:hover{
+                            color: #fff;
+                            background: #004d97;
+                        }
+                    }
+                    .prev-thumb{
+                        left: 0;
+
+                        @include mq($screen-sm) {
+                            top: -8.5%;
+                        }
+                    }
+                    .next-thumb{
+                        right: 0;
+                        @include mq($screen-sm) {
+                            bottom: -8.5%;
+                            right: initial;
+                        }
+                    }
+    			    .thumbs {
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        padding: 0 0 10px;
+                        text-align: center;
+                        white-space: nowrap;
+                        display: inline-block;
+                        vertical-align: middle;
+
+                        @include mq($screen-sm) {
+                            width: 109px;
+                            padding: 25px 0;
+                            position: absolute;
+                            white-space: normal;
+                        }
+                        &:hover,&:focus{
+                            .prev-thumb, .next-thumb{
+                                opacity: .8;
+                            }
+                        }
+    				    li {
+                            @extend .transition;
+                            width: 23%;
+                            padding: 0 1%;
+    					    margin: 10px 0;
+                            display: inline-block;
+                            @include mq($screen-sm){
+                                padding: 0;
+                                width: 100%;
+                                &:first-child{
+                                    margin-top: 0;
+                                }
+                                &:last-child{
+                                    margin-bottom: 0;
+                                }
+                            }
+    					    &:hover {
+    					    	opacity: 0.8;
+    					    }
+    					    a {
+                                display: flex;
+                                overflow: hidden;
+                                align-items: center;
+                                border: 1px solid #cdcdcd;
+                                @include mq($screen-sm){
+                                    height: 82px;
+                                }
+                                img{
+                                    width: 100%;
+                                    height: auto;
+                                }
+    					    	&.ON {
+    						    	img {
+    						    		opacity: 0.8;
+    						    	}
+    						   	}
+    						}
+    					}
+    				}
+    		    }
+            }
+
+            .buy-box {
+                padding-top: 25px;
+                text-transform: none;
+                @include mq($screen-md){
+                   padding-top: 10px;
+                    padding-left: 30px;
+                }
+                .flag{
+                    &:not(.frete-gratis){
+                        display: none;
+                    }
+                    &.lancamentos-shumi {
+                        position: initial !important;
+                    }
+                    &.pre-venda{
+                        @include font-size(1.6);
+                        color: #2c8cdc;
+                        font-weight: 800;
+                        display: block;
+                        padding: 0 0 20px;
+                    }
+                }
+                .productName {
+                    @include font-size(2.4);
+                    text-transform: uppercase;
+                }
+                .productReference{
+                    @include font-size(1.2);
+                }
+                .plugin-preco {
+                    overflow: hidden;
+                    margin-bottom: 20px;
+
+                    .descricao-preco {
+                        .price-list-price,
+                        .price-best-price {
+                            font-style: normal;
+                            display: block;
+                        }
+
+                        .price-list-price {
+                            @include font-size(1.4);
+                            text-decoration: line-through;
+                        }
+
+                        .price-best-price {
+                            @include font-size(0);
+                            padding: 10px 0;
+                            strong {
+                                @include font-size(3.6);
+                                color: #eb7733;
+                            }
+                        }
+                        .price-installments{
+                            @include font-size(1.4);
+                            clear: both;
+                            display: block;
+                            font-style: normal;
+                            strong{
+                                font-weight: normal;
+                            }
+                        }
+                        .preco-a-vista {
+                            clear: both;
+                            overflow: hidden;
+                            margin-top: 10px;
+                            font-style: normal;
+                        }
+                        .preco-boleto{
+                            @include font-size(1.6);
+                            display: block;
+                            padding: 5px 0;
+                            color: #eb7733;
+                            font-weight: 800;
+                            font-style: normal;
+                        }
+
+                    }
+                }
+                .portal-notify-me-ref{
+                    @include font-size(1.4);
+                    .notifyme-title-div{
+                        @include font-size(1.8);
+                        padding: 10px 0;
+                    }
+                    form{
+                        p{
+                            padding-bottom: 10px;
+                        }
+                        input{
+                            @include font-size(1.4);
+                            width: 100%;
+                            margin: 5px 0;
+                            padding: 3px 8px;
+                            @include mq($screen-md){
+                                width: auto;
+                                margin-left: 10px;
+                                margin-right: 10px;
+                            }
+                        }
+                        .btn-ok{
+                            @extend .transition;
+                            border: 0;
+                            color: #fff;
+                            cursor: pointer;
+                            padding: 5px 10px;
+                            background: #2EA42F;
+                            &:hover{
+                                background: #EB7733;
+                            }
+                        }
+                    }
+                }
+                .economia-de {
+                    display: none;
+                }
+
+                .choose-skus {
+                    color: #6c6c6c;
+                    padding: 10px 0;
+                    .specification {
+                        @include font-size(1.2);
+                        padding: 8px 0;
+                        text-transform: uppercase;
+                        &:after{
+                            content: ':';
+                        }
+                    }
+
+                    li {
+                        margin-right: 10px;
+                        list-style-type: none;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        input{
+                            margin: 1px 0 0;
+                            cursor: pointer;
+                            vertical-align: top;
+                        }
+                        label {
+                            @include font-size(1.4);
+                            @extend .transition;
+                            padding: 0 5px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .buy-button {
+                    @extend .btn;
+                    @extend .transition;
+                    @include font-size(3.0);
+                    border: 0;
+                    margin: 0;
+                    float: left;
+                    width: 100%;
+                    max-width: 100%;
+                    border-radius: 0;
+                    font-weight: bold;
+                    padding: 10px 70px;
+                    background: #2ea42f;
+                    text-decoration: none;
+                    color: #fff !important;
+                    text-transform: uppercase;
+                    @include mq($screen-md){
+                        width: auto;
+                    }
+                    &:hover {
+                        @extend .transition;
+                        background: #EB7733;
+                        color: #fff !important;
+                    }
+                }
+            }
+        }
+        .product-info{
+            width: 100%;
+            float: left;
+            display: block;
+            padding: 50px 0 0;
+
+            menu{
+                display: flex;
+                padding: 5px 0;
+                flex-wrap: flex;
+                flex-wrap: wrap;
+                display: -o-flex;
+                display: -ms-flex;
+                display: -moz-flex;
+                display: -webkit-flex;
+                border-bottom: 2px solid #2994cf;
+                @include mq($screen-md){
+                    display: block;
+                    text-align: center;
+                }
+                button{
+                    @extend .transition;
+                    @include font-size(1.4);
+                    width: 50%;
+                    color: #fff;
+                    padding: 10px 0;
+                    background: #ea7633;
+                    display: inline-block;
+                    border: 1px solid #fff;
+                    text-transform: uppercase;
+                    @include mq($screen-md){
+                        @include font-size(2.4);
+                        border: 0;
+                        color: #000;
+                        width: auto;
+                        padding: 0 15px;
+                        background: none;
+                    }
+                    &.active, &:hover{
+                        background: #004d97;
+                        @include mq($screen-md){
+                            color: #2994cf;
+                            padding: 0 30px;
+                            background: none;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            .info{
+                @include font-size(1.4);
+                border-top: 0;
+                overflow: hidden;
+                line-height: 20px;
+                text-transform: none;
+                &>article{
+                    @extend .transition;
+                    height: 0;
+                    display: none;
+                    overflow: hidden;
+                    border: 1px solid #cdcdcd;
+                    &.active{
+                        height: auto;
+                        display: block;
+                        padding: 50px 25px;
+                        animation: grow .8s;
+                        @include mq($screen-md){
+                            padding-left: 60px;
+                            padding-right: 60px;
+                        }
+                    }
+                    &.vids{
+                        iframe{
+                            width: 100%;
+                        }
+                    }
+                }
+                img{
+                    max-width: 100%;
+                }
+            }
+        }
+        .shelfRelacionados {
+            margin-top: 0;
+            overflow: hidden;
+            $ccShelfcolor: #dac90a;
+            h3.tlt-shelf{
+                text-align: center;
+                &:after,
+                &:before{
+                    border-color: $ccShelfcolor;
+                }
+                &+span{
+                    color: $ccShelfcolor;
+                }
+            }
+            h2 {
+                display: none;
+            }
+        }
+    }
+
+    &.blackFriday{
+
+        .bread-crumb {
+            ul {
+                li {
+                    &:after {
+                        color: #fff;
+                    }
+
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        main{
+            .product-view{
+                .buy-box {
+                    .productName {
+                        color: #fff;
+                    }
+
+                    .plugin-preco {
+                        .descricao-preco {
+                            .price-list-price,
+                            .price-installments {
+                                color: #fff;
+                            }
+                        }
+                    }
+
+                    .portal-notify-me-ref{
+                        form{
+                            p{
+                                color: #fff;
+                            }
+                            input{
+                                border: 1px solid #fff;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .product-info{
+
+                menu{
+                    button{
+                        @extend .transition;
+                        @include mq($screen-md){
+                            color: #fff;
+                        }
+                        &.active, &:hover{
+                            background: #004d97;
+
+                            @include mq($screen-md){
+                                color: #2994cf;
+                                padding: 0 30px;
+                                background: none;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+                .info{
+                    background-color: #fff;
+                }
+            }
+
+            #divCompreJunto{
+                .itemA,
+                .itemB{
+                    a{
+                        color: #fff;
+                    }
+                    h3{
+                        color: #fff;
+                    }
+                }
+                .plus,
+                .equal{
+                    color: #fff;
+                }
+                .buy{
+                    color: #fff;
+
+                    a{
+                        color: #fff;
+                    }
+
+                    span{
+                        strong{
+                            color: #eb7733;
+                        }
+                    }
+
+                    #lnkComprar{
+                        @extend .btn;
+                        @extend .transition;
+                        @include font-size(3.0);
+                        border: 0;
+                        margin: 0;
+                        float: left;
+                        width: 100%;
+                        max-width: 100%;
+                        border-radius: 0;
+                        font-weight: bold;
+                        padding: 10px 30px;
+                        background: #2ea42f;
+                        text-decoration: none;
+                        color: #fff !important;
+                        text-transform: uppercase;
+                        @include mq($screen-sm){
+                            width: auto;
+                        }
+                        &:hover {
+                            @extend .transition;
+                            background: #EB7733;
+                            color: #fff !important;
+                        }
+                    }
+                }
+            }
+
+            .shelfRelacionados {
+                $ccShelfcolor: #dac90a;
+
+                h3.tlt-shelf{
+                    color: $ccShelfcolor;
+                }
+            }
+
+        }
+    }
+}

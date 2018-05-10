@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+    <head>
+        <title>Loja Shumi | Kirigami</title>
+        <vtex:metaTags/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <vtex:template id="ShuminoIe-commonStyles" />
+    </head>
+    <body>
+        <vtex:template id="ShuminoIe-header" />
+        <main>
+            <section class="banners-top">
+                <vtex:contentPlaceHolder id="banners-slide" />
+            </section>
+            <section class="pageInfo">
+				<div class="container">
+					<vtex:contentPlaceHolder id="Page-title" />
+					<div class="col-xs-12 col-sm-8"><vtex:contentPlaceHolder id="artigo"/></div>
+					<div class="col-xs-12 col-sm-4"><vtex:contentPlaceHolder id="socialbox"/></div>
+				</div>
+            </section>
+            <section class="shelf col-xs-12 col-md-12 col-md-12">
+                <div class="container">
+                	<vtex:contentPlaceHolder id="prateleira" />
+                </div>
+            </section>
+           	<section class="banners-bottom">
+                <div class="container">
+                    <vtex:contentPlaceHolder id="banners-bottom" />
+                </div>
+            </section>
+        </main>
+        <vtex:template id="ShuminoIe-footer" />
+        <vtex:template id="ShuminoIe-commonScripts" />
+        <script type="text/javascript">
+        	$(window).load(function(){
+	        	$(window).scroll(function(){
+					$('body').each(function(){
+						var shelfSec = $('section.banners-bottom');
+						if(intoView(shelfSec, 1)){
+							$('main').addClass('parallax');
+						}else{
+							$('main').removeClass('parallax');
+						}
+					});
+				});
+			});
+        </script>
+    </body>
+</html>

@@ -1,0 +1,338 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+	width: 100%;
+	float: left;
+	color: #555555;
+	text-transform: none;
+	section{
+		&.newsletter-box{
+			@include font-size(1.4);
+			color: #fff;
+			padding: 25px 0;
+			overflow: hidden;
+			text-align: center;
+			background-color: #004d97;
+			@include mq($screen-md){
+				text-align: left;
+				.container{
+					display: -webkit-flex;
+					display: -moz-flex;
+					display: -ms-flex;
+					display: -o-flex;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+				}
+			}
+			span{
+				padding-top: 5px;
+				@include mq($screen-md){
+					padding-top: 0;
+					padding-left: 0;
+				}
+				strong{
+					@include font-size(2.2);
+					color: #ea7633;
+				}
+			}
+			form{
+				padding-top: 15px;
+				@include mq($screen-sm){
+					padding-top: 0;
+				}
+				fieldset{
+					display: block;
+					margin-top: 5px;
+					margin-bottom: 10px;
+					@include mq($screen-md){
+						margin-top: 0;
+						margin-bottom: 0;
+						margin-right: 15px;
+						display: inline-block;
+					}
+					input{
+						width: 292px;
+					}
+				}
+				input, button{
+					border: 0;
+					padding: 6px 15px;
+					border-radius: 25px;
+					vertical-align: middle;
+					&.submit{
+						@extend .transition;
+						color: #fff;
+						margin: 5px 0;
+						cursor: pointer;
+						font-style: italic;
+						padding-left: 20px;
+						padding-right: 20px;
+						background-color: #ea7633;
+						@include mq($screen-sm){
+							margin: 0;
+						}
+						&:hover{
+							background: #50bc37;
+						}
+					}
+				}
+			}
+			.social-links{
+				float: none;
+				padding-top: 15px;
+				display: inline-block;
+				@include mq($screen-md){
+					float: left;
+					padding-top: 0;
+				}
+				ul{
+					@include mq($screen-md){
+						text-align: right;
+					}
+					li{
+						margin: 0 5px;
+						background: #e1221e;
+						display: inline-block;
+						a{
+							width: 35px;
+							height: 35px;
+							display: block;
+							svg{
+								width: inherit;
+								height: inherit;
+								display: inherit;
+							}
+						}
+						&:first-child{
+							background: none;
+							svg{
+								background: #395897;
+								border: 1px solid #000;
+								path{
+									fill: #fff;
+								}
+							}
+							img{
+								width: 100%;
+								height: auto;
+							}
+						}
+						&:nth-child(2){
+							a{
+								position: relative;
+								svg{
+									top: 50%;
+									left: 9px;
+									width: 18px;
+									height: 14px;
+									position: absolute;
+									transform: translateY(-50%);
+								}
+							}
+						}
+						&:last-child{
+							svg{
+								background: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.section-one{
+			padding: 50px 0 25px;
+			background-color: #e5e5e5;
+			svg{
+				width: 100%;
+				max-width: 235px;
+				max-height: 100px;
+			}
+			.quem-somos{
+				clear: both;
+				overflow: hidden;
+				text-align: center;
+				p{
+					@include font-size (1.4);
+					width: 85%;
+					font-weight: 600;
+					line-height: 18px;
+					margin: 20px auto;
+					&:first-of-type{
+						margin-top: 0;
+					}
+					@include mq($screen-sm){
+						width: 40%;
+					}
+				}
+			}
+		}
+		&.section-2 {
+		    clear: both;
+		    overflow: hidden;
+	        padding-bottom: 35px;
+		    background-color: #e5e5e5;
+
+		    h2{
+		    	@include font-size (1.7);
+			    width: 100%;
+			    padding: 10px;
+			    margin: 15px auto;
+			    border-bottom: 1px solid #555;
+		    }
+
+		    ul{
+		    	li{
+		    		@extend .transition;
+		    		@include font-size(1.4);
+					line-height: 20px;
+					margin-left: 20px;
+					a{
+						display: block;
+						color: inherit;
+	    				padding: 6px 0;
+						text-decoration: none;	
+					}
+					&:hover{
+						transform: translateX(10px);
+					}
+		    	}
+		    }
+		    .local{
+		    	ul{
+		    		display: inline-block;
+	    			li{
+	    				margin: 0;
+	    				padding: 6px 0;
+	    				list-style: none;
+	    				&:hover{
+							transform: none;
+	    				}
+	    				a{
+	    					@extend .transition;
+	    					padding: 0;
+	    					display: inline;
+	    					&:hover{
+	    						text-decoration: underline;
+	    					}
+	    				}
+	    				svg{
+	    					width: 18px;
+	    					height: auto;
+	    					vertical-align: middle;
+	    				}
+	    				span{
+	    					padding-left: 10px;
+	    				}
+	    			}
+		    	}
+		    }
+		    .facebook{
+		    	display: none;
+		    	@include mq($screen-md){
+		    		display: inline-block;
+		    	}
+		    }
+		    .copyright{
+		    	display: flex;
+		    	flex-wrap: wrap;
+		    	align-items: center;
+		    	justify-content: space-around;
+		    	padding-top: 25px;
+		    	@include mq($screen-md){
+		    		display: block;
+		    		padding-top: 0;
+		    	}
+		    	ul{
+		    		li{
+						margin: 0;
+						list-style: none;
+						display: inline-block;
+						vertical-align: middle;
+						@include mq($screen-md){
+							margin-left: 20px;
+						}
+						img, svg{
+							width: 50px;
+							height: auto;
+							@include mq($screen-sm){
+								width: 75px;							
+							}
+						}
+						&:first-child{
+							margin-left: 0;
+						}
+						&:last-child{
+							svg{
+								width: 55px;
+								@include mq($screen-sm){
+									width: 85px;
+								}
+							}
+						}
+						&:hover{
+							transform: none;		
+						}
+					}
+					&:last-child{
+						@include mq($screen-md){
+		    				text-align: right;
+		    			}
+		    			li{
+		    				opacity: .2;
+		    				&:first-child{
+								svg{
+									width: 81px;
+									@include mq($screen-sm){
+										width: 125px;
+									}
+								}
+							}
+							&:last-child{
+								img{
+									width: 75px;
+									@include mq($screen-sm){
+										width: 100px;
+									}
+								}
+							}
+		    			}
+		    		}
+				}
+			}
+		}
+		&.section-3{
+			color: #fff;
+			clear: both;
+			padding: 35px 0;
+			overflow: hidden;
+			text-align: center;
+			background-color: #000;
+			@include mq($screen-md){
+				padding: 20px 0;
+				text-align: left;
+			}
+			a{ color: inherit;}
+			div{
+				span{
+					@include font-size(1.4);
+					line-height: 18px;
+					text-transform: none;
+				}
+				&.formas-de-pagamento{
+					padding-top: 25px;
+					text-align: right;
+					@include mq($screen-md){
+						padding-top: 4px;
+					}
+					img{
+						margin: 0;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

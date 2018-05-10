@@ -1,0 +1,622 @@
+/* ==========================================================================
+   Página de Busca, Categorias e Departamentos
+   ========================================================================== */
+
+body.categoria,
+body.departamento,
+body.resultado-busca {
+
+	@media screen and (max-width: 480px) {
+		.prateleira {
+			li {
+				margin: 0 0 30px;
+				max-width: 260px;
+			}
+		}
+	}
+
+	main {
+	    margin: 0;
+	    float: left;
+	    width: 100%;
+	    padding-top: 25px;
+	}
+
+	.banner-departament {
+		overflow: hidden;
+
+		.box-banner {
+			img {
+			    height: auto;
+			    margin-bottom: 10px;
+			    width: 100%;
+			}
+		}
+	}
+	#nav-dep {
+		overflow: hidden;
+		margin-bottom: 30px;
+
+		.left {
+			float: left;
+			max-width: 60%;
+			line-height: 20px;
+
+			@media screen and (max-width: 780px) {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+
+		.right {
+			float: right;
+			max-width: 40%;
+
+			@media screen and (max-width: 780px) {
+				float: none !important;
+
+				label {
+					display: block;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+
+	.mainShelf {
+		.pager,
+		.searchResultsTime {
+			display: none;
+		}
+		.busca-vazio{
+			display: none;
+		}
+		.sub{
+			&:last-child{
+				display: none;
+			}
+			.orderBy{
+				text-align: center;
+				@include mq($screen-sm){
+					text-align: right;
+				}
+				label{
+					@include font-size(1.2);
+					padding-right: 5px;
+					text-transform: none;
+				}
+				select{
+					padding: 5px 10px;
+				}
+			}
+			.filterBy, .compare{
+				display: none;
+			}
+		}
+	}
+}
+
+body.categoria{
+	&.acessorios{
+		$ccShelfcolor: #2ea42f;
+		$ccShelfcolorHover: #167a16;
+		main{padding-top: 0;}
+		.shelf{
+			background: url(/arquivos/acessorios-parallax.png) no-repeat bottom left;
+			@include mq($screen-md){
+				background-position-x: -265px;
+			}
+			@include mq($screen-lg){
+				background-position-x: 0;
+			}
+			h3.tlt-shelf{
+				&:after,
+			    &:before{
+			    	border-color: $ccShelfcolor;
+			    }
+			    &+span{
+					color: $ccShelfcolor;
+			    }
+			}
+			li.shumi-no-ie{
+				.box-item{
+					.best-price{
+						color: $ccShelfcolor;
+					}
+					.preco-boleto{
+						color: $ccShelfcolor;
+					}
+					.wrapper-buy-button-asynchronous{
+						.add{
+							a{
+								background: $ccShelfcolor;
+								&:hover{
+									background: $ccShelfcolorHover;
+								}
+							}
+						}
+					}
+					.vejaMais{
+						a{
+							color: $ccShelfcolor;
+						}
+					}
+					&:hover{
+				    	border-color: $ccShelfcolor !important;
+					}
+				}
+				&:before{
+					content:'';
+					left: 0;
+					top: 15px;
+					z-index: 1;
+					width: 100%;
+					height: 42px;
+					display: block;
+					position: absolute;
+					pointer-events: none;
+					background: url('/arquivos/pin-purple.png') top center no-repeat;
+				}
+				&:first-child,&:nth-child(10n+0){
+					&:before{
+						background: url('/arquivos/pin-purple.png') top center no-repeat;
+					}
+				}
+				&:nth-child(2n+0){
+					&:before{
+						background: url('/arquivos/pin-blue.png') top center no-repeat;
+					}
+				}
+				&:nth-child(3n+0){
+					&:before{
+						background: url('/arquivos/pin-green.png') top center no-repeat;
+					}
+				}
+				&:nth-child(4n+0){
+					&:before{
+						background: url('/arquivos/pin-orange.png') top center no-repeat;
+					}
+				}
+				&:nth-child(5n+0){
+					&:before{
+						background: url('/arquivos/pin-red.png') top center no-repeat;
+					}
+				}
+				&:nth-child(6n+0){
+					&:before{
+						background: url('/arquivos/pin-lightblue.png') top center no-repeat;
+					}
+				}
+				&:nth-child(7n+0){
+					&:before{
+						background: url('/arquivos/pin-lighorange.png') top center no-repeat;
+					}
+				}
+				&:nth-child(8n+0){
+					&:before{
+						background: url('/arquivos/pin-lighgreen.png') top center no-repeat;
+					}
+				}
+				&:nth-child(9n+0){
+					&:before{
+						background: url('/arquivos/pin-lightpurple.png') top center no-repeat;
+					}
+				}
+			}
+			.pager{
+				ul{
+					li{
+						color: $ccShelfcolor;
+					}
+				}
+			}
+		}
+
+		&.blackFriday{
+			main{
+
+				.mainShelf{
+					.sub{
+						background-color: transparent;
+
+						.orderBy{
+							label{
+								color: #fff;
+							}
+						}
+					}
+				}
+
+				#api-facebook-include{
+					iframe{
+						background: #fff;
+					}
+				}
+
+				section.shelf{
+					border-bottom: none;
+				}
+			}
+		}
+	}
+	main{
+		section{
+			clear: both;
+			overflow: hidden;
+			&.sub-cats{
+				padding: 24px 0;
+				a{
+					display: inline-block;
+					img{
+						display: block;
+						max-width: 100%;
+						height: auto;
+					}
+				}
+				div.col-md-4{
+					padding: 0 10.9px;
+					a{
+						width: 100%;
+						margin: 11px 0;
+						position: relative;
+						img{
+							width: 100%;
+							height: auto;
+						}
+						.overlay{
+							@extend .transition;
+							top: 0;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							color: #fff;
+							padding: 30px;
+							position: absolute;
+							background: rgba(0,0,0,.4);
+							h5{
+								@include font-size(2.4);
+								font-weight: 300;
+								@include mq($screen-sm){
+									margin-bottom: 10px;
+								}
+							}
+							h4{
+								@include font-size(4.6);
+								font-weight: 800;
+							}
+							.comprar{
+								@extend .transition;
+								@include font-size(1.8);
+								display: none;
+								position: absolute;
+								text-decoration: underline;
+								@include mq($screen-sm){
+									display: inline-block;
+									opacity: 0;
+								}
+							}
+						}
+						&:hover{
+							.overlay{
+								.comprar{
+									opacity: 1;
+								}
+							}
+						}
+					}
+					&:first-of-type{
+						a{
+							.comprar{
+								right: 30px;
+								bottom: 30px;
+							}
+							&:last-of-type{
+								h5{
+									@include mq($screen-sm){
+										margin-top: 4.2%;
+									}
+									@include mq($screen-md){
+										margin-top: 17.2%;
+									}
+								}
+							}
+						}
+					}
+					&:nth-of-type(2){
+						text-align: right;
+						a{
+							.overlay{
+								h5{
+									@include font-size(3.0);
+									margin-top: 0;
+									font-weight: 800;
+								}
+								h4{
+									@include font-size(5.4);
+									font-weight: 800;
+									margin-bottom: 10px;
+									@include mq($screen-sm){
+										margin-top: 50%;
+									}
+								}
+								.comprar{
+									right: 30px;
+									bottom: 45px;
+									display: block;
+									padding: 10px 30px;
+									background: #2ea42f;
+									text-decoration: none;
+								}
+							}
+						}
+					}
+					&:last-of-type{
+						@include mq($screen-sm){
+							text-align: right;
+						}
+						a{
+							@include mq($screen-sm){
+								width: 48.86%;
+								box-sizing: border-box;
+							}
+							@include mq($screen-md){
+								width: 100%;
+								padding: 0;
+							}
+							h5{
+								@include mq($screen-sm){
+									margin-top: 15%;
+								}
+								@include mq($screen-md){
+									margin-top: 40%;
+								}
+							}
+							.comprar{
+								top: 30px;
+								left: 30px;
+								text-align: left;
+								position: absolute;
+							}
+							&:first-of-type{
+								text-align: left;
+								@include mq($screen-sm){
+									margin: 11px 14px 11px 0;
+								}
+								@include mq($screen-md){
+									margin: 11px 0;
+								}
+							}
+						}
+					}
+				}
+			}
+			&.shelf{
+				padding: 50px 0;
+				border-bottom: 1px solid #cccccc;
+				&.parallax{
+				  background-attachment: fixed;
+				}	
+			}
+			&.outros-servicos{
+				padding-top: 90px;
+			}
+		}
+		.mainShelf{
+			.sub{
+				text-align: center;
+				padding: 10px 37px;
+				background: #fafafa;
+			}
+			.pager{
+				@include font-size(1.6);
+				display: block;
+				text-align: center;
+				&.top{
+					background: #fafafa;
+					@include mq($screen-sm){
+						top: 13px;
+						left: 37px;
+						text-align: left;
+						position: absolute;
+						background: transparent;
+					}
+				}
+				&.bottom{
+					padding-top: 42px;
+					@include mq($screen-sm){
+						text-align: right;
+						background: transparent;
+					}
+					.pages{
+						padding: 5px;
+						background: #fff;
+						@include mq($screen-sm){
+							padding: 0;
+							background: none;
+						}
+					}
+				}
+				ul{
+					li{
+						@extend .transition;
+						padding: 4px 5px;
+						display: inline-block;
+						&:before{
+							@extend .transition;
+						}
+						&.first{
+							@include font-size(0);
+							
+							&:before{
+								@include font-size(1.6);
+								content: '<<<';
+							}
+						}
+						&.previous{
+							@include font-size(0);
+							
+							&:before{
+								@include font-size(1.6);
+								content: '<<';
+							}	
+						}
+						&.next{
+							@include font-size(0);
+							
+							&:before{
+								@include font-size(1.6);
+								content: '>>';
+							}
+						}
+						&.last{
+							@include font-size(0);
+							&:before{
+								@include font-size(1.6);
+								content: '>>>';
+							}
+						}
+						&:hover{
+							@include font-size(2);
+							padding: 0 15px;
+							&.first, &.last, &.previous, &.next{
+								@include font-size(0);
+								&:before{
+									@include font-size(2);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.costura-e-bordado{
+		main{
+			padding-top: 0;
+			.sub-cats{
+				div{
+					text-align: right;
+					&:last-of-type{
+						text-align: left;
+					}
+				}
+			}
+			.mainShelf .pager.top{
+				position: relative;
+			    padding-bottom: 25px;
+			}
+			.shelf{
+				background: url(/arquivos/bordado-parallax.png) no-repeat bottom left;
+				h3.tlt-shelf{
+					text-align: center;
+					&:after,
+				    &:before{
+				    	border-width: 2px;
+				    	border-bottom-style: dashed;
+				    }
+				}
+				@include mq($screen-md){
+					background-position-x: -265px;
+				}
+				@include mq($screen-lg){
+					background-position-x: 0;
+				}
+				$ccShelfcolor: #f36d96;
+				$ccShelfcolorHover: #ee306a;
+				h3.tlt-shelf{
+					&:after,
+				    &:before{
+				    	border-color: #f36d96;
+				    }
+				    &+span{
+						color: #f36d96;
+				    }
+				}
+				.box-item{
+					border-width: 2px;
+					border-style: dashed;
+					.best-price{
+						color: $ccShelfcolor;
+					}
+					.preco-boleto{
+						color: $ccShelfcolor;
+					}
+					.wrapper-buy-button-asynchronous{
+						.add{
+							a{
+								background: $ccShelfcolor;
+								&:hover{
+									background: $ccShelfcolorHover;
+								}
+							}
+						}
+					}
+					.vejaMais{
+						a{
+							color: $ccShelfcolor;
+						}
+					}
+					&:hover{
+				    	border-color: $ccShelfcolor !important;
+					}
+				}
+				.pager{
+					ul{
+						li{
+							color: $ccShelfcolor;
+						}
+					}
+				}
+			}
+		}
+
+		&.blackFriday{
+			main{
+				#api-facebook-include{
+					iframe{
+						background: #fff;
+					}
+				}
+
+				section.shelf{
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+	&.blackFriday{
+		main{
+
+			.mainShelf{
+				.sub{
+					background-color: transparent;
+
+					.orderBy{
+						label{
+							color: #fff;
+						}
+					}
+				}
+
+				.pager{
+					ul{
+						li{
+							color: #fff;
+						}
+					}
+				}
+			}
+
+			#api-facebook-include{
+				iframe{
+					background: #fff;
+				}
+			}
+
+			section.shelf{
+				border-bottom: none;
+			}
+		}
+	}
+}

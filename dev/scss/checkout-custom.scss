@@ -1,0 +1,560 @@
+@charset "UTF-8";
+
+@import "resetv2";
+@import "partials/base/mixins";
+@import "partials/base/variables";
+@import "partials/base/responsive-utilities";
+@import "partials/base/base";
+@import "partials/base/grid";
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,700,700italic);
+
+$font-base: 'Roboto', sans-serif;
+
+/* ==========================================================================
+   Shopping Cart
+   ========================================================================== */
+
+@media (min-width: 1200px) {
+  @import "http://fonts.googleapis.com/css?family=Oswald:400,300";
+  .container {
+    width: 1170px;
+    padding: 20px 0;
+  }
+  .container-cart,
+  .container-order-form {
+    width: 970px;
+  }
+  .masthead {
+    padding: 10px 5px 0;
+  }
+  .masthead h3 {
+    font-size: 24.5px;
+    margin: 10px 0;
+  }
+  .masthead h1,
+  .masthead h2,
+  .masthead h3 {
+    line-height: 40px;
+  }
+  .masthead h1,
+  .masthead h2,
+  .masthead h3,
+  .masthead h4,
+  .masthead h5,
+  .masthead h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+  }
+ 
+}
+@media (max-width: 480px) {
+}
+
+/* E-Core Styles
+   ========================================================================== */
+
+html {
+  min-height: 100%;
+}
+
+.client-pre-email .client-email {
+  margin-top: 25px;
+}
+
+body {
+  padding: 0 !important;
+  font-family: $font-base;
+  header{
+    section.top-box{
+      clear: both;
+      display: none;
+      overflow: hidden;
+      background-color: #004d97;
+      @include mq($screen-sm){
+        display: block;
+      }
+      .top-box-itens{
+        text-align: center;
+        ul{
+          padding: 20px 0;
+          text-align: center;
+          li{
+            margin: 0 25px;
+            display: inline-block;
+            span{
+              color: #fff;
+              float:right;
+              font-size: 12px;
+              text-align: left;
+              line-height: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .row:not(.container){
+    margin-left: 0;
+  }
+  .container{
+    margin: 0 auto;
+  }
+  h3.tlt-shelf {
+    @extend .container;
+      $ccShelfcolor: #004d97;
+      color: #000;
+      display: flex;
+      font-size: 32px;
+      font-weight: normal;
+      padding: 0 !important;
+      margin: 30px auto 15px;
+      $ccTltMargin: 6px;
+      &:after,
+      &:before{
+        content: " ";
+        flex-grow: 1;
+        margin-bottom: 8px;
+        display: inline-block;
+        border-bottom: 1px solid;
+        border-color: $ccShelfcolor;
+      }
+      &:before{margin-right: $ccTltMargin;}
+      &:after{margin-left: $ccTltMargin;}
+      &+span{
+        display: block;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 30px;
+        color: $ccShelfcolor;
+        text-transform: none;
+      }
+  }
+  .container-cart{
+    padding: 0 10px !important;
+  }
+}
+
+
+fieldset {
+  padding: 0;
+  border: none;
+}
+
+.flex { display: flex; }
+
+
+#cart-title{
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.cart-totalizers{
+    .accordion-heading{
+        display: none;
+    }
+    .shipping-sla-selector{
+      .btn-mini{
+        max-width: 100%;
+        span{
+          color: #000;
+        }
+      }
+    }
+}
+
+.product-name{
+  a{
+    color: #2f88cf;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}
+.btn{
+  &.link-box-edit{
+    i{
+      &:before{
+        color: #000;
+      }
+    }
+  }
+}
+.product-image{
+  img {
+    height: auto;
+    max-width: 45px;
+    width: auto;
+  }
+}
+
+.cart-items {
+  thead{
+    th{
+      color: #333;
+      font-size: 13px;
+    }
+  }
+
+  tbody{
+    td{
+      span{
+        color: #333;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.item-unavailable-message span {
+  &:nth-child(3) {
+    font-size: 0px !important;
+
+    &::after {
+      content: "Produto indisponível no momento.";
+      font-size: 14px;
+    }
+  }
+}
+
+body.body-order-form{
+  .unavailable-modal-body{
+    .unavailable-message{
+      p{
+        display: block;
+        font-size: 0;
+
+        &:after{
+          content: "O seguinte item não está disponível para entrega nessa região.";
+          display: block;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.item-unavailable-message span:nth-child(3)::after {
+    content: "Produto indisponível para essa região." !important;
+}
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+  .top-itens {
+    background-color: #b7b7b7;
+    height: 30px;
+    overflow: hidden;
+    clear: both;
+  }
+  
+  .top-itens-info ul {
+    text-align: center;
+    line-height: 30px
+  }
+  
+  .top-itens-info ul li {
+    display: inline-block;
+    margin-right: 50px;
+    color: #555555;
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .logo-icon {
+    clear: both;
+    padding: 15px 0;
+    overflow: hidden;
+    background-color: #eb7733;
+    .logo {
+      text-align: center;
+    }
+  }
+
+  .title-cart {
+      text-align: center;
+  }
+
+  .title-cart h2 {
+      font-weight: 100;
+      font-size: 25px;
+      margin-bottom: 55px;
+      margin-top: 55px;
+      text-decoration: underline;
+  }
+
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+  
+  footer{
+    color: #555555;
+    font-size: 14px;
+    h2{
+      font-size: 16px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #555555;
+    }
+    li{
+      list-style: none;
+    }
+    .top{
+      padding: 30px 0 50px;
+      background: #e5e5e5;
+      div{box-sizing: border-box;}
+      .local{
+        padding-bottom: 25px;
+        @include mq($screen-sm){
+          padding-bottom: 0;
+        }
+      }
+      .informacao{
+        text-align: center;
+        img{
+          margin-bottom: 30px;
+        }
+      }
+      .account{
+        padding-top: 25px;
+        text-align: center;
+        @include mq($screen-sm){
+          padding-top: 0;
+          text-align:right;
+        }
+        ul{
+          li{
+            display: inline-block;
+            img{
+              width: 75px;
+              height: 70px;
+            }
+            svg{
+              width: 85px;
+              height: 70px;
+            }
+          }
+        }
+      }
+    }
+    .bottom{
+      padding: 20px 0;
+      background: #000;
+      .copyright, .formas-de-pagamento{
+        width: 100%;
+        display: inline-block;
+        box-sizing: border-box;
+        @include mq($screen-sm){
+          width: 50%;
+        }
+      }
+      .copyright{
+        ul{
+          text-align: center;
+          @include mq($screen-sm){
+            text-align: left;
+          }
+          li{
+            display: inline-block;
+            svg{
+              width: 100px;
+              height: 50px;
+              vertical-align: middle;
+              display: inline-block;
+              path, text tspan{
+                fill: #fff;
+              }
+            }
+            &:last-child{
+              svg{
+                  width: 85px;
+                  overflow: visible;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /* ==========================================================================
+   Main
+   ========================================================================== */
+
+    h1#cart-title {
+    display: none !important;
+    }
+
+    
+    .quantity input {
+      font-size: 14px;
+      font-weight: 200;
+      background: none;
+      box-shadow: none;
+      border: none;
+      border-right: 1px solid #f4f4f4;
+      border-left: 1px solid #f4f4f4;
+      border-radius: 0px;
+    }
+
+    .forms .pull-right {
+      width: 75%;
+    }
+
+    input#cart-coupon{
+      position: absolute;
+    }
+
+    .shipping-calculate .info {
+        float: none;
+    }
+    .full-cart .summary-totalizers .space{
+      display: none !important;
+    }
+    .full-cart .summary-totalizers .empty{
+      display: none;
+      @include mq($screen-md){
+        display: initial;
+      }
+    }
+    .full-cart .summary-totalizers .info {
+      width: 30px;
+    }
+
+/* ==========================================================================
+   Checkout Buttons
+   ========================================================================== */
+
+#cart-choose-more-products,
+#cart-to-orderform{
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 0;
+    max-width: initial;
+    border: medium none;
+    background-image: none;
+    padding: 10px 20px !important;
+}
+
+#cart-choose-more-products{
+    padding: 0;
+    color: #000;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#cart-to-orderform{
+    font-weight: bold;
+    font-family: "Roboto";
+    display: inline-block;
+    text-transform: uppercase;
+    background-color: #2ea42f;
+}
+
+.shipping-option-item-time.delivery-estimate {
+    font-size: 0;
+}
+
+button#cart-coupon-add {
+    border: none;
+    font-size: 14px;
+    font-weight: 200;
+    color: #6eb9cc !important;
+    background: none;
+    box-shadow: none;
+    position: relative;
+}
+
+button#cart-shipping-calculate {
+    border: none;
+    font-size: 14px;
+    font-weight: 200;
+    color: #6eb9cc !important;
+    background: none;
+    box-shadow: none;
+    position: absolute;
+    top: 25px;
+    right: 75px;
+}
+
+.btn.btn-success{
+  font-size: 16px;
+  border-radius: 0;
+  text-shadow: none;
+  border: medium none;
+  font-weight: normal;
+  background-image: none;
+  text-transform: uppercase;
+  max-width: none !important;
+  font-family: Roboto !important;
+  background-color: #2ea42f !important;
+  &:hover{
+    background-color: #eb7733 !important;
+  }
+}
+
+#go-to-shipping,
+.btn-go-to-payment,
+#payment-data-submit,
+.client-pre-email .btn-success {
+  right: 1px;
+  top: -14px;
+  height: 52px;
+  font-size: 16px;
+  border-radius: 0;
+  text-shadow: none;
+  position: absolute;
+  font-weight: normal;
+  border: medium none;
+  background-image: none;
+  text-transform: uppercase;
+  max-width: none !important;
+  font-family: Roboto !important;
+  background-color: #2ea42f !important;
+  &:hover{
+    background-color: #eb7733 !important;
+  }
+}
+
+.btn.btn-success span {
+    color: #fff !important;
+}
+
+#go-to-shipping,
+.btn-go-to-payment,
+#payment-data-submit {
+  width: 100%;
+  font-size: 13px;
+  position: inherit;
+}
+
+.payment-confirmation-wrap {
+  bottom: -15px;
+}
+
+body .container {
+  padding: 0 10px !important;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.empty-cart-content{
+  text-align: center;
+}
+.empty-cart-links{
+  text-align: center;
+  a{
+    border: 0;
+    max-width: none;
+    border-radius: 0px;
+    display: inline-block;
+    font-family: Roboto !important;
+  }
+}
+.credits {
+  vertical-align: top;
+  display: inline-block;
+}

@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+@-ms-viewport { width: device-width; }
+
+/*
+Dependencies
+========================================================================== */
+
+@import "partials/base/mixins";
+@import "resetv2";
+@import "partials/all";
+
+/*
+Base Style
+========================================================================== */
+
+@include mq($screen-sm) {
+	*:focus { outline: none !important; }
+}
+
+.font-tinos {
+	font-family: 'Tinos', serif;
+}
+
+.font-ptsans {
+	font-family: 'PT Sans', sans-serif;
+}
+
+html {
+	@extend .font-ptsans;
+	min-height: 100%;
+	box-sizing: border-box;
+	font: {
+		size: 10px;
+	}
+	text-transform: uppercase;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: inherit; }
+
+body.blackFriday{
+	background-color: #000;
+}

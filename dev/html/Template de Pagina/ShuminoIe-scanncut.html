@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+    <head>
+        <title>Loja Shumi | ScanNCut</title>
+        <vtex:metaTags/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <vtex:template id="ShuminoIe-commonStyles" />
+    </head>
+    <body>
+        <vtex:template id="ShuminoIe-header" />
+        <nav class="menu hidden-xs hidden-sm">
+            <ul class="container">
+                <li class="menu-item"><a href="#">Início</a></li>
+                <li class="menu-item"><a href="#scanncut-box">scanncut</a></li>
+                <li class="menu-item"><a href="#projetos-box">projetos</a></li>
+                <li class="menu-item"><a href="#videos-box">videos</a></li>
+                <li class="menu-item"><a href="#acessorios-box">acessorios</a></li>
+                <li class="menu-item"><a href="#canvas-box">canvas</a></li>
+                <li class="menu-item"><a href="#frase-box">frase</a></li>
+                <li class="menu-item"><a href="#especificacoes-box">Especificações</a></li>
+            </ul>
+        </nav>
+        <main>
+           <section class="banners-top">
+                <vtex:contentPlaceHolder id="Banner-top"/>
+           </section>
+           <section class="shelf-scancut">
+             <div class="container">
+               <vtex:contentPlaceHolder id="produto-scancut" />
+             </div>
+           </section>
+           <section id="scanncut-box" class="scanncut">
+                <div class="container">
+                   <h2>ScanNCut, a primeira máquina de corte do mundo com scanner integrado</h2>
+                   <p>O segredo para a incrível versatilidade da ScanNCut reside no seu scanner embutido de 300 DPI, tornando a única máquina de corte que pode levar as imagens digitalizadas, fotos ou desenhos tirados mão, e transformá-los em projetos de corte únicos, sem a necessidade de um computador, software, ou cartuchos caros.</p>
+                  <vtex:contentPlaceHolder id="modal-video"/>
+                  <div class="frases">
+                       Com a sua ScanNCut você faz lindos projetos de 
+                       <div class="palavras">
+                        <vtex:contentPlaceHolder id="frases-palavra"/>
+                       </div>
+                  </div>
+              </div>
+           </section>
+           <section id="possibilidades-box" class="possibilidades">
+                <div class="container">
+                    <img src="/arquivos/scanncut-posibilities.jpg" class="col-xs-12 col-sm-12 col-md-12" />
+                    <h2>Uma máquina, muitas possibilidades</h2>
+                    <p>Quando o assunto for máquinas de corte, a ScanNCut vai mudar seu jeito de pensar para sempre. Com ela você não vai precisar de cartão de memória e computador. Os 840 desenhos embutidos são somente o começo. Só a ScanNCut digitaliza uma imagem, foto ou desenho feito a mão, permitindo o corte preciso das formas e contornos que você precisa. Seu Scanner colorido de até 300 DPI pode criar desenhos com contornos de corte, a partir de um desenho feito a mão, uma arte ou algo visto em uma revista, sem uso de computador. Com ScanNcut você pode trabalhar facilmente com uma grande variedade de materiais. Solte sua imaginação!</p>
+                    <a href="http://minhascanncut.com.br/scanncut.html" class="saiba-mais">Saiba mais</a>
+                </div>
+           </section>
+           <section id="projetos-box" class="projetos">
+                <div class="container">
+                    <h2>Projetos</h2>
+                    <p>Faça o download de projetos de impressão e comece a cortar agora mesmo.</p>
+                    <div class="projetos-imgs col-xs-12 col-sm-12 col-md-12">
+                        <vtex:contentPlaceHolder id="projetos"/>
+                    </div>
+                    <a href="http://minhascanncut.com.br/projetos.html" class="saiba-mais">Ver todos os projetos</a>
+                </div>
+           </section>
+           <section id="videos-box" class="videos">
+                <div class="container">
+                    <h2>Vídeos</h2>
+                    <vtex:contentPlaceHolder id="videos" />
+                    <a href="http://minhascanncut.com.br/videos.html" class="saiba-mais">Assistir todos os vídeos</a>
+                </div>
+           </section>
+           <section id="acessorios-box" class="acessorios">
+                <div class="container">
+                    <div class="col-xs-12 col-sm-12 col-md-4">
+                        <h2>Acessórios opcionais</h2>
+                        <p>Obtenha o máximo de sua Máquina de corte com materiais adicionais, lâminas entre outros</p>
+                        <a href="/shumi-no-ie/acessorios/scanncut" class="saiba-mais">Ver todos os acessórios</a>
+                    </div>
+                    <img src="/arquivos/scanncut-acessorios.jpg" class="col-xs-12 col-sm-12 col-md-8"/>
+                </div>
+           </section>
+           <section id="canvas-box" class="canvas">
+               <div class="container">
+                    <img src="/arquivos/scanncut-canvas.jpg" class="col-xs-12 col-sm-12 col-md-12" />
+                    <P>Com o ScanNCut Canvas, um serviço da web gratuito você cria de maneira simples, rápida e fácil desenhos e projetos que podem ser baixados e salvos em um pendrive para serem utilizados em sua ScanNCut. Fazer seus projetos ficou muito mais divertido!</P>
+                    <a href="https://scanncutcanvas.brother.com/pt" target="_blank" class="saiba-mais">Experimente agora</a>
+               </div>
+           </section>
+           <section id="frase-box" class="frase">
+                <div class="container">
+                    <h2>Uma máquinas muitas possibilidades</h2>
+                    <img src="/arquivos/bandeiras.jpg" />
+                </div>
+           </section>
+           <section id="especificacoes-box" class="especificacoes">
+               <div class="container">
+                  <h3>ScanNCut</h3>
+                  <h2>Especificações</h2>
+                  <vtex:contentPlaceHolder id="especificacoes" />
+               </div>
+           </section>
+        </main>
+        <vtex:template id="ShuminoIe-footer" />
+        <vtex:template id="ShuminoIe-commonScripts" />
+        <script type="text/javascript" src="/arquivos/shumi-slick.js"></script>
+    </body>
+</html>

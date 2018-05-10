@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+    <head>
+        <title>Loja Shumi | Videos</title>
+        <vtex:metaTags/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <vtex:template id="ShuminoIe-commonStyles" />
+    </head>
+    <body>
+        <vtex:template id="ShuminoIe-header" />
+        <main>
+            <section class="videos">
+                <div class="container">
+                    <h3 class="tlt-shelf">Vídeos</h3>
+                    <span>Assista aos nossos vídeos e fique por dentro das novidades</span>
+                    <div id="yt-app">
+                        <div class="main-video col-xs-12 col-md-12" id="main-video"></div>
+                        <div class="more-videos col-xs-12 col-md-12" id="more-videos"></div>
+                    </div>
+                </div>
+            </section><!-- banners-top END -->
+            <section class="instagram">
+                <div class="container row">
+                    <h3 class="tlt-shelf">Instagram</h3>
+                    <span>Inspiração via Instagram! Já está nos seguindo?</span>
+                    <vtex.cmc:instagram />
+                </div>
+            </section>
+            <section class="blog facebook col-xs-12 col-sm-12 col-md-12">
+                <div class="container row">
+                    <h3 class="tlt-shelf">Facebook Shumi-no-Ie</h3>
+                    <span>Mostre que você tem interesse por esta página curtindo-a.</span>
+                    <vtex.cmc:facebook />
+                    <div class="vejaMais col-xs-12 col-sm-12 col-md-12">
+                        <a href="https://www.facebook.com/shuminoie">Visitar a página da Shumi-no-ie no facebook</a>
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="blog shuminoblog col-xs-12 col-sm-12 col-md-12">
+                <div class="container row">
+                    <h3 class="tlt-shelf">Blog Shumi-no-Ie</h3>
+                    <span>Produtos que vão de domésticos à profissionais se encaixando a cada uma de suas necessidades</span>
+                    <div class="post-contents col-xs-12"></div>
+                    <div class="vejaMais col-xs-12 col-sm-12 col-md-12">
+                        <a class="vejaMais" href="/blog/">Postagens anteriores</a>
+                    </div>
+                </div>
+            </section> -->
+        </main>
+
+        <vtex:template id="ShuminoIe-footer" />
+
+        <vtex:template id="ShuminoIe-commonScripts" />
+        <script type="text/javascript" src="/arquivos/youtube-api-v3.js"></script>
+        <script type="text/javascript" src="/arquivos/shumi-slick.js"></script>
+        <script type="text/javascript" src="/arquivos/cursos-v11.js"></script>
+    </body>
+</html>

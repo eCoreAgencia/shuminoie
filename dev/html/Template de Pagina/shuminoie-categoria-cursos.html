@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+    <head>
+        <title>Loja Shumi | Soluções Brother para Arte Têxtil</title>
+        <vtex:metaTags/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <vtex:template id="ShuminoIe-commonStyles" />
+        <link rel="stylesheet" href="https://ericluciano.com/ecore/shumi/cursos.css" />
+    </head>
+    <body>
+        <vtex:template id="ShuminoIe-header" />
+        <main>
+            <div class="banners-top-flex">
+                <section>
+                    <vtex:contentPlaceHolder id="banner-1" />
+                </section>
+                <section>
+                    <vtex:contentPlaceHolder id="banner-2" />
+                </section>
+            </div>
+            <section>
+                <div class="container row">
+                    <h3 class="tlt-shelf"></h3>
+                    <span>Encontre o curso ideal e ganhe dinheiro sem sair de casa!</span>
+                </div>
+            </section>
+            <section class="shelf">
+                <div class="container">
+                    <vtex:contentPlaceHolder id="Page-title" />
+                    <section class="mainShelf main-flex">
+                        <div class="content-one">
+                            <div class="header-title-list"></div>
+                            <vtex.cmc:searchNavigator />
+                        </div>
+                        <div class="content-two">
+                            <vtex.cmc:searchResult layout="6f535a08-69df-461d-87cd-705c153997fb" itemCount="16" columnCount="16" />
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </main>
+        <vtex:template id="ShuminoIe-footer" />
+        <vtex:template id="ShuminoIe-commonScripts" />
+        <script type="text/javascript" src="/arquivos/shumi-slick.js"></script>
+        <script type="text/javascript" src="/arquivos/cursos-v3.js"></script>
+        <script type="text/javascript" src="https://ericluciano.com/ecore/shumi/cursos.js"></script>
+        <script>
+            setTimeout(function(){
+                $(".prateleira ul li").each(function(){ 
+
+                    var boleto = $(this).find('.preco-boleto');
+                    var bestPrice = $(this).find('.best-price');
+                    
+                    var pb = boleto.text(); 
+                    var bp = bestPrice.text().trim();
+                    
+                    boleto.text('ou ' + bp + ' no cartão');
+                    
+                    bestPrice.text( pb.substr(2, pb.length));
+                    bestPrice.attr('style', 'text-transform:initial;'); 
+                    
+                });
+            },3500);
+        </script>
+    </body>
+</html>

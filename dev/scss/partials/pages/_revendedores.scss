@@ -1,0 +1,33 @@
+.box-revendedores{
+  display:flex;
+  max-width:1290px;
+  justify-content:space-evenly;
+  flex-wrap:wrap;
+  margin:0 auto;
+  margin-top:30px;
+    .lista-revendedores{
+      max-width:402px;
+      min-width:320px;
+      min-height:150px;
+      width:100%;
+      border:1px solid #B1B1B1;
+      box-sizing:border-box;
+      padding:24px 20px 30px 20px;
+      margin:14px 0px;
+    }
+
+.logo-revendedor{
+  margin-bottom:20px;
+}
+
+.box-endereco p {
+    line-height: 26px !important;
+    color: #343434 !important;
+    font-size: 1.4em !important;
+    padding-bottom: 0px !important;
+}
+
+.box-endereco .link-revendedores{
+  color:#EA7A18 !important;
+  text-transform:none !important;
+}

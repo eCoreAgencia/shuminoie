@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+	<head>
+        <title>Loja Shumi | Fale Conosco</title>
+        <vtex:metaTags/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <vtex:template id="ShuminoIe-commonStyles" />
+	</head>
+	<body>
+		<vtex:template id="ShuminoIe-header" />
+
+		<main>
+			<div class="container">
+			
+				<article class="conteudo">
+					<form action="javascript:masterDataContato()" method="POST" class="form-contato" data-module="newsletter">
+
+					<fieldset class="nome">
+						<input type="text" name="newsletterClientNome" id="cl_nome" class="nome" placeholder="Digite seu nome" data-validation="required-nome" data-msg-required="Digite seu nome" data-msg-email="Digite seu nome" />
+					</fieldset>
+
+					<fieldset class="email">
+						<input type="text" name="newsletterClientEmail" id="cl_email" class="email" placeholder="Digite seu e-mail" data-validation="required email" data-msg-required="Digite seu e-mail" data-msg-email="O e-mail que você inseriu está incorreto" />
+					</fieldset>
+
+					<fieldset class="telefone">
+						<input type="text" name="newsletterClientTelefone" id="cl_telefone" class="telefone" placeholder="Digite seu e-mail" data-validation="required telefone" data-msg-required="Digite seu telefone" data-msg-telefone="Insira um telefone válido" />
+					</fieldset>
+
+					<fieldset class="mensagem">
+						<input type="text" name="newsletterClientMensagem" id="cl_mensagem" class="mensagem" placeholder="Digite seu e-mail" data-validation="required mensagem" data-msg-required="Digite seu mensagem" data-msg-mensagem="Insira uma mensagem válida" />
+					</fieldset>
+
+					<button type="submit" class="newsletter-button-ok submit">Enviar</button>
+					</form>					
+				</article>
+			</div>
+		</main><!-- main END -->
+
+        <footer>
+            <vtex:template id="ShuminoIe-footer" />
+        </footer>
+
+        <vtex:template id="ShuminoIe-commonScripts" />
+    </body>
+</html>

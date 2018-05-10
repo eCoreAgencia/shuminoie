@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Meus Pedidos
+   ========================================================================== */
+
+.orders, .vtex-bootstrap,{
+    padding: 0 !important;
+    header, footer{
+        font-size: 10px !important;
+        font-size: 1rem !important;
+        fieldset{
+            padding: 0 !important;
+        }
+    }
+    main{
+        padding: 15px 0;
+    }
+	@include mq($screen-md) {
+		@include font-size(1.5);
+	}    
+    .container{
+        padding:0;
+        width:100% !important;
+        @include mq($screen-md) {
+            width: 930px;
+        }
+    }
+    h3.tlt-shelf {
+        $ccShelfcolor: #004d97;
+        &:after,
+        &:before{
+            border-color: $ccShelfcolor;
+        }
+        &+span{
+            color: $ccShelfcolor;
+        }
+    }
+    .page-header{ 
+        display: none;
+    }
+    .myo-cancel-btn{
+        @extend .transition;
+        border: 0;
+        color: #fff;
+        border-radius: 0;
+        background: #004D97;
+        &:hover{
+            background: #eb7733;
+        }
+    }
+}

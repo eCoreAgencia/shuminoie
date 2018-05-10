@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+    <head>
+        <title>Loja Shumi | <vtex.cmc:productPageTitle /></title>
+        <vtex:metaTags/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <vtex:template id="ShuminoIe-commonStyles-teste" />
+    </head>
+    <body>          
+        <vtex:template id="ShuminoIe-header" />
+        <main>
+            <div class="container">
+                <div class="row">
+                    <vtex.cmc:breadCrumb />
+                </div>
+                <div class="row">
+                    <section class="product-view">
+                        <section class="product-box col-xs-12 col-md-7">
+                            <vtex.cmc:ProductImage zoom="on" />
+                        </section><!-- product-box END -->
+                        <section class="buy-box col-xs-12 col-md-5">
+                            <vtex.cmc:productName />
+                            <vtex.cmc:productReference/>
+                            <vtex.cmc:HightLight />
+                            <vtex.cmc:discountHightLight/>
+                            <div class="price-info">
+                                <div class="choose-skus">
+                                    <vtex.cmc:skuRichSelection changeImage="1" />
+                                </div>
+                                <div class="unidade">
+                                    <vtex.cmc:skuPrice/>
+                                </div>
+                                <vtex.cmc:BuyButton />
+                            </div><!-- price-info END -->
+                        </section><!-- buy-box END -->
+                    </section><!-- product-view END -->
+                </div><!-- row END -->
+                <div class="container">
+                    <div class="row">
+                        <div class="compre-junto col-md-12 col-xs-12 col-sm-12">
+                            <vtex.cmc:BuyTogether/> 
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <menu class="menu">
+                        <button name="productDescription">Descrição</button>
+                        <button name="spec">Especificação Técnica</button>
+                        <button name="acessorios">Acessórios</button>
+                        <button name="download">Download</button>
+                        <button name="faq">FAQ</button>
+                        <button name="vids">Vídeos</button>
+                    </menu>
+                    <section class="info">
+                        <article class="productDescription">
+                            <vtex.cmc:ProductDescription/>
+                        </article>
+                        <article class="spec"></article>
+                        <article class="acessorios"></article>
+                        <article class="download"></article>
+                        <article class="faq"></article>
+                        <article class="vids"></article>
+                    </section>
+                </div>
+                <section class="facebook-comments">
+                    <div id="fb-comments-app"></div>
+                </section>
+                <div class="row container">
+                    <section class="shelf shelfRelacionados">
+                        <h3 class="tlt-shelf">Olha o que temos para você</h3>
+                        <span>Confira o que as pessoas estão procurando também!</span>
+                        <vtex:contentPlaceHolder id="shelfRelacionados" />
+                    </section><!-- shelfRelacionados END -->
+                </div><!-- row END -->
+            </div>
+        </main>
+        <vtex:template id="ShuminoIe-footer" />
+        <vtex:template id="ShuminoIe-commonScripts" />
+        <script type="text/javascript" src="/arquivos/product-thumb-arrows-v7.js"></script>
+        <script type="text/javascript" src="/arquivos/Shumino-preVenda.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            
+                
+                  $(".bread-crumb li a[href*='shumi-no-ie/bordado']").each(function(){
+                      $(".product-view").find('.frete-gratis').text('FRETE GRÁTIS para todo Brasil');
+                  });
+                  
+                  $(".bread-crumb li a[href*='shumi-no-ie/costura']").each(function(){
+                      $(".product-view").find('.frete-gratis').text('FRETE GRÁTIS para todo Brasil');
+                  });
+                  
+                  $(".bread-crumb li a[href*='shumi-no-ie/maquina-de-corte']").each(function(){
+                      $(".product-view").find('.frete-gratis').text('FRETE GRÁTIS para todo Brasil');
+                  });
+                  
+                  
+                
+            });
+        </script>
+    </body>
+</html>
